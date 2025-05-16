@@ -1,0 +1,14 @@
+﻿# Ignore arquivos de configuração do VS
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore arquivos de build
+bin/
+obj/
+
+# Ignore outros arquivos comuns
+*.log
+*.tmp

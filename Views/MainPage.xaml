@@ -1,0 +1,29 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:BrownianMotionApp.ViewModels"
+             xmlns:local="clr-namespace:BrownianMotionApp.Views"
+             x:Class="BrownianMotionApp.Views.MainPage"
+             x:DataType="vm:MainViewModel"
+             Title="Simulação Browniana">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <Label Text="Preço Inicial:" />
+        <Entry Text="{Binding InitialPrice}" Keyboard="Numeric"/>
+
+        <Label Text="Volatilidade (%)::" />
+        <Entry Text="{Binding VolatilityPercent}" Keyboard="Numeric"/>
+
+        <Label Text="Média do Retorno (%):" />
+        <Entry Text="{Binding MeanPercent}" Keyboard="Numeric"/>
+
+        <Label Text="Tempo (dias):" />
+        <Entry Text="{Binding Time}" Keyboard="Numeric"/>
+
+        <Button Text="Gerar Gráfico" Command="{Binding GenerateCommand}" />
+
+        <GraphicsView x:Name="ChartView" HeightRequest="300" />
+
+
+    </VerticalStackLayout>
+</ContentPage>
