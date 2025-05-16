@@ -47,6 +47,11 @@ namespace BrownianMotionApp.ViewModels
 
         private void GeneratePrices()
         {
+            if (InitialPrice <= 0 || VolatilityPercent <= 0 || Time <= 0)
+            {
+                Application.Current.MainPage.DisplayAlert("Erro", "Todos os valores devem ser maiores que zero.", "OK");
+                return;
+            }
 
             double volatility = VolatilityPercent / 100.0;
             double mean = MeanPercent / 100.0;
