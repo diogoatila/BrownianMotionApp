@@ -50,6 +50,7 @@ namespace BrownianMotionApp.ViewModels
 
             double volatility = VolatilityPercent / 100.0;
             double mean = MeanPercent / 100.0;
+
             // Gera o movimento browniano
             Prices = BrownianMotionGenerator.GenerateBrownianMotion(volatility, mean, InitialPrice, Time);
         }

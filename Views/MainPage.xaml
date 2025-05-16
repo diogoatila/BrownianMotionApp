@@ -1,5 +1,6 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              xmlns:vm="clr-namespace:BrownianMotionApp.ViewModels"
              xmlns:local="clr-namespace:BrownianMotionApp.Views"
              x:Class="BrownianMotionApp.Views.MainPage"
@@ -11,7 +12,7 @@
         <Label Text="Preço Inicial:" />
         <Entry Text="{Binding InitialPrice}" Keyboard="Numeric"/>
 
-        <Label Text="Volatilidade (%)::" />
+        <Label Text="Volatilidade (%):" />
         <Entry Text="{Binding VolatilityPercent}" Keyboard="Numeric"/>
 
         <Label Text="Média do Retorno (%):" />
@@ -22,7 +23,11 @@
 
         <Button Text="Gerar Gráfico" Command="{Binding GenerateCommand}" />
 
-        <GraphicsView x:Name="ChartView" HeightRequest="300" />
+        <skia:SKCanvasView 
+                x:Name="SkiaChartView" 
+                PaintSurface="OnCanvasViewPaintSurface"
+                HeightRequest="300" />
+
 
 
     </VerticalStackLayout>

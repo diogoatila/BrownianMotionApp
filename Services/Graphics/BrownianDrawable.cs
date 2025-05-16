@@ -1,19 +1,19 @@
 ﻿using Microsoft.Maui.Graphics;
 
-namespace BrownianMotionApp.Views
+namespace BrownianMotionApp.Services.Graphics
 {
-    // Classe BindableDrawable que herda de BindableObject
+
     public class BindableDrawable : BindableObject, IDrawable
     {
-        // Definindo a propriedade BindableProperty
+      
         public static readonly BindableProperty PricesProperty =
             BindableProperty.Create(
-                nameof(Prices),                 // Nome da propriedade
-                typeof(double[]),               // Tipo da propriedade
-                typeof(BindableDrawable),       // Tipo da classe onde a propriedade está
-                default(double[]));             // Valor padrão
+                nameof(Prices),                 
+                typeof(double[]),              
+                typeof(BindableDrawable),       
+                default(double[]));             
 
-        // Propriedade associada ao BindableProperty
+      
         public double[] Prices
         {
             get => (double[])GetValue(PricesProperty);
